@@ -6,6 +6,7 @@
     "City": "City city",
     "State/Province/Region": "State/Province/Region state",
     "ZIP/Postal Code": "ZIP/Postal Code zip",
+    "Country": "Country country",
     "Phone Number": "Phone Number phone",
     "ship to title": "ship to title Ecom_ShipTo_Postal_Name_Prefix",
     "ship to first name": "ship to first name Ecom_ShipTo_Postal_Name_First",
