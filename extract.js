@@ -1,19 +1,18 @@
-var fs = require('fs');
+const fs = require('fs');
 
 module.exports.extract = function(window) {
 	// Write your solution to Task #2 - Extract Metadata task
-	var json = {};
+	const json = {};
 
-	var dom = window.document;
+	const dom = window.document;
 
-	var form = dom.querySelector('form');
-	var table = form.querySelector('table');
+	const form = dom.querySelector('form');
 
-	var formInputs = form.elements;
+	const formInputs = form.elements;
 
-	for (var i = 0; i < formInputs.length; i++) {
-		var key = formInputs[i].parentNode.previousSibling.innerHTML.trim();
-		var value = formInputs[i].name.trim();
+	for (let i = 0; i < formInputs.length; i++) {
+		let key = formInputs[i].parentNode.previousSibling.innerHTML.trim();
+		let value = formInputs[i].name.trim();
 		json[key] = key + ' ' + value;
 	}
 
