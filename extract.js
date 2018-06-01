@@ -3,6 +3,7 @@ const util = require('util');
 
 module.exports.extract = function(window) {
 	// Write your solution to Task #2 - Extract Metadata task
+	var json = {};
 
 	var dom = window.document;
 
@@ -11,8 +12,16 @@ module.exports.extract = function(window) {
 
 	var formInputs = form.getElementsByTagName('input');
 
-	for (var index = 0; index < formInputs.length; index++) {
-		var key = formInputs[index].parentNode.previousSibling.innerHTML;
-		var value = formInputs[index].name;
+	for (var i = 0; i < formInputs.length; i++) {
+		var key = formInputs[i].parentNode.previousSibling.innerHTML.trim();
+		var value = formInputs[i].name.trim();
+
+		json[key] = key + ' ' + value;
 	}
+
+	// console.log(util.inspect(json));
+
+	fs.writeFile('mapping.json', JSON.stringify(json, null, 4), 'utf8');
+
+	return json;
 };
